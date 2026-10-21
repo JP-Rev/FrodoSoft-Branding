@@ -5,8 +5,8 @@
 // termina aca.
 export const CONTACTO = {
   // Solo digitos, con codigo de pais y sin el 15: 549XXXXXXXXXX
-  whatsapp: '',
-  email: '',
+  whatsapp: '5492346482861',
+  email: '', // PENDIENTE: el usuario lo pasa mas adelante
 }
 
 export const PRECIO = {
