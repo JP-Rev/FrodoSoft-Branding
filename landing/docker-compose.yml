@@ -1,0 +1,13 @@
+# name: explicito por la convencion del VPS (ver infra-notes-vps-hostinger,
+# plan-multiempresa-y-backups.md seccion 0b): sin el, el nombre de proyecto
+# sale de la carpeta y puede chocar con otra app.
+name: frodosoft-landing
+
+services:
+  web:
+    build: .
+    container_name: frodosoft_landing
+    restart: unless-stopped
+    # Solo loopback: al publico entra por el nginx del host, detras de Cloudflare.
+    ports:
+      - "127.0.0.1:3030:80"
