@@ -10,7 +10,8 @@ export const CONTACTO = {
 }
 
 export const PRECIO = {
-  mensual: 30000,
+  // Por cada app (Kinetic o VetAdmin), no por las dos juntas.
+  mensual: 20000,
   diasPrueba: 30,
 }
 

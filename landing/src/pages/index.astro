@@ -145,7 +145,8 @@ const hayContacto = Boolean(waLink || mailLink)
         <div>
           <p class="kicker">Suscripción</p>
           <h2>Un precio, todo incluido</h2>
-          <p class="precio-num"><strong>{precio}</strong> <span>/ mes</span></p>
+          <p class="precio-num"><strong>{precio}</strong> <span>/ mes por sistema</span></p>
+          <p class="nota">Kinetic o VetAdmin: cada sistema se contrata por separado.</p>
           <p class="promo">🎁 Primer mes gratis de prueba</p>
           <p class="nota">Lo usás 30 días completo, y recién después decidís si seguís.</p>
         </div>
@@ -412,6 +413,9 @@ const hayContacto = Boolean(waLink || mailLink)
   .precio h2 { margin-bottom: 16px; }
   .precio-num { margin: 0; font-size: 1.2rem; color: var(--muted); }
   .precio-num strong { font-size: clamp(2.4rem, 6vw, 3.4rem); color: var(--text); letter-spacing: -0.03em; }
+  /* En celular "/ mes por sistema" pasa entero a la linea de abajo, no partido. */
+  .precio-num span { white-space: nowrap; }
+  .precio-num + .nota { margin-top: 8px; }
   .promo {
     display: inline-block;
     margin: 16px 0 8px;
