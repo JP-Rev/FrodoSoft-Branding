@@ -4,6 +4,8 @@ import Base from '../layouts/Base.astro'
 import { CONTACTO } from '../datos'
 import logo from '../assets/frodosoft.svg'
 
+import kineticIcono from '../assets/productos/kinetic-icono.png'
+import vetIcono from '../assets/productos/vetadmin-icono.png'
 import kineticFicha from '../assets/productos/kinetic-ficha.png'
 import kineticFactura from '../assets/productos/kinetic-factura.png'
 import kineticCierre from '../assets/productos/kinetic-cierre.jpg'
@@ -21,6 +23,7 @@ const productos = [
     // Cada producto tiene su acento: Kinetic teal, VetAdmin ambar (como en las piezas de Instagram).
     acento: '#14b8a6',
     tinta: '#5eead4',
+    icono: kineticIcono,
     nombre: 'Kinetic',
     bajada: 'Software para consultorios de kinesiología',
     texto:
@@ -41,6 +44,7 @@ const productos = [
     id: 'vetadmin',
     acento: '#f59e0b',
     tinta: '#fcd34d',
+    icono: vetIcono,
     nombre: 'VetAdmin',
     bajada: 'Gestión para clínicas veterinarias',
     texto:
@@ -118,7 +122,10 @@ const iconoInstagram =
         productos.map((p) => (
           <article class="producto" id={p.id} style={`--ac:${p.acento};--ink:${p.tinta}`}>
             <div class="producto-txt">
-              <h3>{p.nombre}</h3>
+              <div class="producto-cab">
+                <Image src={p.icono} alt="" width={56} height={56} class="producto-icono" />
+                <h3>{p.nombre}</h3>
+              </div>
               <p class="bajada">{p.bajada}</p>
               <p>{p.texto}</p>
               <ul>
@@ -336,6 +343,8 @@ const iconoInstagram =
   /* La galeria va abajo, a todo el ancho: las piezas tienen texto chico y
      a media tarjeta no se leen. Tres a la vista, el resto se desliza. */
   .galeria { grid-column: 1 / -1; }
+  .producto-cab { display: flex; align-items: center; gap: 16px; }
+  .producto-icono { width: 56px; height: 56px; border-radius: 14px; flex: none; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35); }
   .bajada { color: var(--accent-ink); font-weight: 600; margin: 4px 0 16px; }
   .producto-txt p { color: var(--muted); }
   .producto-txt .bajada { color: var(--ink); }
