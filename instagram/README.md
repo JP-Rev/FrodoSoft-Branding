@@ -1,6 +1,12 @@
 # Piezas para el feed de Instagram
 
-Cuadradas, 1080×1080, en orden de carrusel. Capturas de las apps reales con
+`feed/`: cuadradas, 1080×1080, en orden de carrusel.
+`feed-4x5/`: las cinco de VetAdmin en 1080×1350 (4:5, el vertical que
+recomienda Instagram para el feed). Instagram no acepta formatos más anchos
+que 1,91:1 (1080×566) y los recorta.
+
+⚠️ En un carrusel todas las imágenes toman la proporción de la primera: si se
+mezclan Kinetic (1080×1080) con VetAdmin (1080×1350), las de abajo se recortan. Capturas de las apps reales con
 datos inventados.
 
 | Archivo | Pieza |
