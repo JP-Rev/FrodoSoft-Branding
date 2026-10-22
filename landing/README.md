@@ -4,7 +4,7 @@ Sitio estático en Astro. `npm run build` genera `dist/`, que sirve un nginx
 dentro de un contenedor publicado en `127.0.0.1:3030`. Al público entra por el
 nginx del host (`deploy/landing-frodosoft.conf`), detrás de Cloudflare.
 
-- Textos de contacto y precio: `src/datos.ts`.
+- Textos de contacto: `src/datos.ts`.
 - Mockups: `src/assets/productos/` (capturas de las apps reales **con datos
   inventados**; no reemplazarlas por capturas de producción).
 

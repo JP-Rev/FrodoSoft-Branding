@@ -9,12 +9,3 @@ export const CONTACTO = {
   email: '', // PENDIENTE: el usuario lo pasa mas adelante
   instagram: 'https://www.instagram.com/frodosoft/',
 }
-
-export const PRECIO = {
-  // Por cada app (Kinetic o VetAdmin), no por las dos juntas.
-  mensual: 20000,
-  diasPrueba: 30,
-}
-
-export const formatearPesos = (n: number) =>
-  new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', maximumFractionDigits: 0 }).format(n)
