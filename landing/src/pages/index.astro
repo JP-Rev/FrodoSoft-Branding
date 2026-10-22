@@ -26,8 +26,6 @@ const productos = [
     icono: kineticIcono,
     nombre: 'Kinetic',
     bajada: 'Software para consultorios de kinesiología',
-    texto:
-      'Fichas de pacientes con anamnesis, sesiones, historia clínica, estudios y ART. Factura electrónica a ARCA sin salir de la app, cuenta corriente y control del monotributo.',
     puntos: [
       'Ficha completa de cada paciente, también desde el celular',
       'Factura electrónica a ARCA',
@@ -47,8 +45,6 @@ const productos = [
     icono: vetIcono,
     nombre: 'VetAdmin',
     bajada: 'Gestión para clínicas veterinarias',
-    texto:
-      'Clientes, mascotas e historia clínica. Agenda de turnos con recordatorios automáticos por WhatsApp, y caja con ventas, productos y gastos.',
     puntos: [
       'Historia clínica de cada mascota',
       'Recordatorios de turno por WhatsApp',
@@ -127,7 +123,6 @@ const iconoInstagram =
                 <h3>{p.nombre}</h3>
               </div>
               <p class="bajada">{p.bajada}</p>
-              <p>{p.texto}</p>
               <ul>
                 {p.puntos.map((t) => (
                   <li>{t}</li>
