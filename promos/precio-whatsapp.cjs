@@ -16,7 +16,8 @@ const SALIDA = path.resolve(process.argv[2] || 'salida')
 // ---- Lo que cambia seguido ------------------------------------------------
 const PRECIO = '$20.000'
 const POR = '/ mes por sistema'
-const NOTA = 'Kinetic o VetAdmin: cada sistema se contrata por separado.'
+// Cada app con su color: Kinetic teal, VetAdmin ambar.
+const NOTA = '<b class="k">Kinetic</b> o <b class="v">VetAdmin</b>: cada sistema se contrata por separado.'
 const WHATSAPP = '2346 48-2861'
 const PUNTOS = [
   'Hosting, dominio seguro (HTTPS) y respaldo diario',
@@ -78,6 +79,11 @@ h1 em { font-style: normal; color: ${ACENTO_CLARO}; }
 .monto strong { font-family: 'Inter Display', sans-serif; font-weight: 700; color: #fff; letter-spacing: -.04em; font-size: ${hist ? 176 : 116}px; line-height: 1; }
 .monto span { white-space: nowrap; font-size: ${hist ? 40 : 30}px; font-weight: 500; color: #a8bccd; }
 .nota { margin-top: ${hist ? 18 : 12}px; font-size: ${hist ? 26 : 23}px; color: #93a9bd; line-height: 1.4; }
+.nota b { font-weight: 600; }
+.nota .k { color: #5eead4; }
+.nota .v { color: #fcd34d; }
+.app:last-child strong { color: #fcd34d; }
+.app:first-child strong { color: #5eead4; }
 .puntos { list-style: none; display: flex; flex-direction: column; gap: ${hist ? 34 : 20}px; margin-top: ${hist ? 64 : 34}px; }
 .puntos li { display: flex; align-items: center; gap: 24px; font-size: ${hist ? 34 : 29}px; font-weight: 500; color: #e8eef5; }
 .tick { width: ${hist ? 22 : 17}px; height: ${hist ? 22 : 17}px; border-radius: 50%; background: ${ACENTO}; flex: none; box-shadow: 0 0 0 8px rgba(13,148,136,.2); }

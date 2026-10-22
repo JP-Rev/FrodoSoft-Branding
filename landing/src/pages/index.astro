@@ -18,6 +18,9 @@ import vetMovil from '../assets/productos/vetadmin-movil.png'
 const productos = [
   {
     id: 'kinetic',
+    // Cada producto tiene su acento: Kinetic teal, VetAdmin ambar (como en las piezas de Instagram).
+    acento: '#14b8a6',
+    tinta: '#5eead4',
     nombre: 'Kinetic',
     bajada: 'Software para consultorios de kinesiología',
     texto:
@@ -36,6 +39,8 @@ const productos = [
   },
   {
     id: 'vetadmin',
+    acento: '#f59e0b',
+    tinta: '#fcd34d',
     nombre: 'VetAdmin',
     bajada: 'Gestión para clínicas veterinarias',
     texto:
@@ -111,7 +116,7 @@ const iconoInstagram =
 
       {
         productos.map((p) => (
-          <article class="producto" id={p.id}>
+          <article class="producto" id={p.id} style={`--ac:${p.acento};--ink:${p.tinta}`}>
             <div class="producto-txt">
               <h3>{p.nombre}</h3>
               <p class="bajada">{p.bajada}</p>
@@ -322,8 +327,10 @@ const iconoInstagram =
     align-items: start;
     padding: 32px;
     margin-bottom: 32px;
-    background: linear-gradient(180deg, var(--card), var(--bg-2));
-    border: 1px solid var(--line);
+    background:
+      radial-gradient(520px 240px at 0% 0%, color-mix(in srgb, var(--ac) 15%, transparent), transparent 70%),
+      linear-gradient(180deg, var(--card), var(--bg-2));
+    border: 1px solid color-mix(in srgb, var(--ac) 28%, var(--line));
     border-radius: var(--radius);
   }
   /* La galeria va abajo, a todo el ancho: las piezas tienen texto chico y
@@ -331,7 +338,7 @@ const iconoInstagram =
   .galeria { grid-column: 1 / -1; }
   .bajada { color: var(--accent-ink); font-weight: 600; margin: 4px 0 16px; }
   .producto-txt p { color: var(--muted); }
-  .producto-txt .bajada { color: var(--accent-ink); }
+  .producto-txt .bajada { color: var(--ink); }
   ul { padding: 0; margin: 0; list-style: none; display: grid; gap: 10px; }
   li { position: relative; padding-left: 26px; }
   li::before {
@@ -342,8 +349,8 @@ const iconoInstagram =
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.18);
+    background: var(--ac, var(--accent));
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--ac, var(--accent)) 20%, transparent);
   }
   /* Riel horizontal con scroll-snap: en celular se desliza de a una pieza. */
   .galeria {
